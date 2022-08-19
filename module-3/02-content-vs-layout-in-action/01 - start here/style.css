@@ -1,0 +1,105 @@
+:root {
+  --spacer: 1rem;
+
+  --clr-neutral-100: #fff;
+  --clr-neutral-400: #333;
+  --clr-neutral-900: #111;
+  --clr-primary-400: #3c1500;
+
+  --fw-700: 900;
+  --fw-400: 300;
+
+  --fs-400: 1.125rem;
+  --fs-500: 1.5rem;
+  --fs-600: 2.25rem;
+  --fs-700: 3rem;
+}
+
+/* reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+/* Utility classes */
+.flow-content > * + * {
+  margin-top: var(--flow-space, var(--spacer));
+}
+
+.container {
+  padding: 0 var(--spacer);
+  max-width: 68rem;
+  margin: 0 auto;
+}
+
+.split {
+  display: flex;
+  flex-direction: column;
+}
+
+.split > * + * {
+  margin: calc(var(--spacer) * 3) 0 0 0;
+}
+
+@media (min-width: 40em) {
+  .split {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  /* .split > * {
+    flex-basis: 100%;
+  } */
+
+  .split > * + * {
+    margin: 0 0 0 var(--spacer);
+  }
+}
+
+/* general styling */
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: var(--fw-300);
+  font-size: var(--fs-400);
+  color: var(--clr-neutral-400);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: var(--fw-700);
+}
+
+h1 {
+  font-size: var(--fs-700);
+}
+h2 {
+  font-size: var(--fs-600);
+}
+h3 {
+  font-size: var(--fs-500);
+}
+
+/* components */
+
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: var(--fw-700);
+  background: var(--clr-primary-400);
+  color: var(--clr-neutral-100);
+  padding: 0.5em 1.25em;
+}

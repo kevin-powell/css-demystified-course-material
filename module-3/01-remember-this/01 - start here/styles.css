@@ -1,0 +1,198 @@
+:root {
+  --clr-primary-400: #00a1ab;
+  --clr-primary-500: #3741a0;
+
+  --clr-accent-400: #00cdac;
+  --clr-accent-500: #114243;
+
+  --clr-neutral-100: #fff;
+  --clr-neutral-200: #fafafa;
+  --clr-neutral-300: #e5e3e8;
+  --clr-neutral-400: #4e4e4e;
+}
+
+/* ///////////////
+  Reset
+  ////////////// */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ///////////////
+  General styling
+  ////////////// */
+
+body {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  margin: 0;
+}
+
+section {
+  padding: 6rem 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin: 0;
+  color: var(--clr-primary-400);
+}
+
+.fs-500 {
+  font-size: 1.3125rem;
+  margin: 0;
+}
+
+.container {
+  padding: 0 2em;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.bg-light {
+  --bg: var(--clr-neutral-400);
+  --fg: var(--clr-neutral-100);
+  --pop: var(--clr-primary-400);
+
+  color: var(--clr-neutral-400);
+  background: linear-gradient(-45deg, #e5e3e8, #fafafa);
+}
+
+.bg-accent {
+  --bg: var(--clr-neutral-100);
+  --fg: var(--clr-neutral-400);
+  --pop: var(--clr-neutral-100);
+
+  color: var(--clr-neutral-100);
+  background: linear-gradient(-45deg, #00a1ab, #3741a0);
+}
+
+.bg-dark {
+  color: var(--clr-neutral-100);
+  background: var(--clr-neutral-400);
+}
+
+/* ///////////////
+  Buttons
+  ////////////// */
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.5em 0.75em;
+  border-radius: 0.25em;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: var(--bg, var(--clr-primary-400));
+  color: var(--fg, var(--clr-neutral-100));
+}
+
+.button--light {
+  background: white;
+  color: #4e4e4e;
+}
+
+.button--dark {
+  color: white;
+  background: #4e4e4e;
+}
+
+/* ///////////////
+  Plans
+  ////////////// */
+
+.plans {
+  display: flex;
+  justify-content: center;
+  margin: 2em 0;
+}
+
+.plan {
+  width: 16.5rem;
+  padding: 2em;
+  border-radius: 1em;
+  margin: 0 0.5em;
+}
+
+.plan__title {
+  text-transform: uppercase;
+  margin: 0 0 1em;
+}
+
+.plan__price {
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 900;
+  margin: 0;
+  color: var(--pop);
+}
+
+.plan__price span {
+  display: block;
+  font-size: 1.5625rem;
+  font-weight: 300;
+}
+
+.plan__description {
+  margin: 2em 0;
+  line-height: 1.5;
+}
+
+/* ///////////////
+  Teams
+  ////////////// */
+
+.team {
+  background: #e5e3e8;
+}
+
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  text-align: left;
+  flex: 1 1 45%;
+  margin: 1em;
+  display: flex;
+  border-radius: 0.5em;
+  align-items: center;
+  padding: 0.5em 2em 0.5em 0.5em;
+  line-height: 1.6;
+}
+
+.team-member img {
+  width: 10rem;
+  border-radius: 0.25em;
+  margin-right: 1em;
+}
+
+.team-member .name {
+  font-size: 1.75rem;
+  line-height: 1;
+  font-weight: 900;
+  color: var(--pop);
+  margin: 0;
+}
+
+.team-member .position {
+  margin-top: 0;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.team-member--mirrored {
+  padding: 0.5em 0.5em 0.5em 2em;
+}
+
+.team-member--mirrored img {
+  order: 2;
+  margin-right: 0;
+  margin-left: 1em;
+}
