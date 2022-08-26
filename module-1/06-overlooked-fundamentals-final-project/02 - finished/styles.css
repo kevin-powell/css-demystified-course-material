@@ -1,0 +1,187 @@
+:root {
+  --clr-base-400: #5e5e5e;
+  --clr-base-500: #494949;
+
+  --clr-ui-300: #f8e2ff;
+  --clr-ui-400: #580d3a;
+  --clr-ux-300: #e2ffea;
+  --clr-ux-400: #115926;
+  --clr-dev-300: #e2fcff;
+  --clr-dev-400: #024f4f;
+
+  --clr-accent-400: #7e47c5;
+
+  --ff-accent: "Podkova", serif;
+  --ff-base: "Open Sans", sans-serif;
+
+  --fs-300: 0.75rem;
+  --fs-400: 1rem;
+  --fs-500: 2rem;
+
+  --fw-400: 400;
+  --fw-700: 700;
+
+  --shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
+  --border-radius: 0.75rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+}
+
+body {
+  font-family: var(--ff-base);
+  line-height: 1.6;
+  font-size: var(--fs-400);
+  color: var(--clr-base-400);
+}
+
+.ux {
+  --bg: var(--clr-ux-300);
+  --fg: var(--clr-ux-400);
+}
+.ui {
+  --bg: var(--clr-ui-300);
+  --fg: var(--clr-ui-400);
+}
+.dev {
+  --bg: var(--clr-dev-300);
+  --fg: var(--clr-dev-400);
+}
+
+.tag {
+  font-size: var(--fs-300);
+  font-weight: var(--fw-700);
+  display: inline-block;
+  padding: 0.15em 0.75em;
+  border-radius: 100vw;
+  margin-right: 0.5em;
+  background: var(--bg, lightgray);
+  color: var(--fg, #333);
+}
+
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0.5em 3em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--fg, #fff);
+  background: var(--bg, var(--clr-accent-400));
+  border-radius: var(--border-radius);
+}
+
+.candidate {
+  padding: 1em;
+}
+
+.candidate > img {
+  border-radius: var(--border-radius);
+}
+
+.candidate .name,
+.candidate .roles,
+.candidate .bio {
+  margin: 0;
+}
+
+.candidate .name {
+  font-family: var(--ff-accent);
+  font-size: var(--fs-500);
+  color: var(--clr-base-500);
+  line-height: 1;
+}
+
+.candidate .roles {
+  line-height: 1;
+  font-size: var(--fs-300);
+}
+
+.candidate .social {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.candidate .social a:hover,
+.candidate .social a:focus {
+  opacity: 0.5;
+}
+
+.candidate .btn {
+  align-self: end;
+  justify-self: end;
+}
+
+/* /////////////////
+   Layout related
+   no need to touch any of this
+//////////////////*/
+
+.candidates {
+  max-width: 70em;
+  margin: 0 auto;
+  padding: 2em;
+  display: grid;
+  gap: 2em;
+}
+
+.candidate {
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-areas:
+    "img social"
+    "name name"
+    "role role"
+    "bio bio"
+    "button button";
+  gap: 0.5em;
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+}
+
+@media (min-width: 500px) {
+  .candidate {
+    grid-template-columns: min-content minmax(15rem, 22.5rem);
+    grid-template-rows: min-content min-content 1fr auto;
+    grid-template-areas:
+      "img name"
+      "img role"
+      "img bio"
+      "social button";
+  }
+}
+
+@media (min-width: 960px) {
+  .candidates {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.candidate img {
+  grid-area: img;
+}
+.candidate .name {
+  grid-area: name;
+}
+.candidate .roles {
+  grid-area: role;
+}
+.candidate .bio {
+  grid-area: bio;
+}
+.candidate .social {
+  grid-area: social;
+}
+.candidate .btn {
+  grid-area: button;
+}
